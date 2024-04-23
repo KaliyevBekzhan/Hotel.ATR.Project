@@ -1,0 +1,69 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<ul>
+    <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+    <li>
+        <a asp-controller="Room" asp-action="Room">ROOMS</a>
+        <ul class="submenu">
+            <li><a asp-controller="Room" asp-action="Roomlist">ROOM LIST</a></li>
+            <li><a asp-controller="Room" asp-action="Roomdetails">ROOM DETAILS</a></li>
+        </ul>
+    </li>
+    @* <li>
+        <a href="#">ACTIVITIES</a>
+        <ul class="submenu megamenu">
+            <li>
+                <a href="#">Megamenu List</a>
+                <ul>
+                    <li><a asp-controller="Location" asp-action="Index">Location</a></li>
+                    <li><a asp-controller="Room" asp-action="Index">Room Grid</a></li>
+                    <li><a asp-controller="Room" asp-action="Roomlist">Room List</a></li>
+                    <li><a asp-controller="Room" asp-action="Roomdetails">Room Details</a></li>
+                    <li><a href="#">Mega menu</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Megamenu List</a>
+                <ul>
+                    <li><a asp-controller="Event" asp-action="Index">Event</a></li>
+                    <li><a href="#">Mega menu</a></li>
+                    <li><a asp-controller="Home" asp-action="login">Contact</a></li>
+                    <li><a asp-controller="Team" asp-action="Index">Team</a></li>
+                    <li><a href="#">Mega menu</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Megamenu List</a>
+                <ul>
+                    <li><a asp-controller="Room" asp-action="Roomlist">Room List</a></li>
+                    <li><a href="#">Mega menu</a></li>
+                    <li><a asp-controller="Room" asp-action="Index">Room Grid</a></li>
+                    <li><a asp-controller="Room" asp-action="Roomdetails">Room Details</a></li>
+                    <li><a href="#">Mega menu</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li> *@
+    <li><a asp-controller="Location" asp-action="Location">LOCATION</a></li>
+    <li><a asp-controller="Event" asp-action="Event">EVENT</a></li>
+    <li><a asp-controller="Team" asp-action="Team">TEAM</a></li>
+    <li><a asp-controller="Contact" asp-action="Contact">CONTACT</a></li>
+    <li> 
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a asp-controller = "Home" asp-action="logout">
+                @User.Identity.Name
+                LOGOUT
+            </a>
+        }
+        else
+        {
+            <a asp-controller="Home" asp-action="login">                
+                LOGIN
+            </a>
+        }
+    </li>
+</ul>

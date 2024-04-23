@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="~/style.css">
     <link rel="stylesheet" href="~/css/responsive.css">
     <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    @RenderSection("style", false)
 </head>
 <body>
 
@@ -26,7 +28,7 @@
             <div class="row">
                 <div class="col-lg-5 col-md-4 col-sm-4 col-xs-12">
                     <div class="logo">
-                        <a href="index.html"><img src="img/logo/logo.png" alt="HotelATR"></a>
+                        <a asp-controller = "Home" asp-action="Index"><img src="~/img/logo/logo.png" alt="HotelATR"></a>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-8 col-sm-8 hidden-xs">
@@ -46,134 +48,16 @@
                     <!-- Mainmenu Start -->
                     <div class="main-menu hidden-xs">
                         <nav>
-                            <ul>
-                                <li><a href="index.html">HOME</a></li>
-                                <li>
-                                    <a href="room-grid.html">ROOMS</a>
-                                    <ul class="submenu">
-                                        <li><a href="room-list.html">ROOM LIST</a></li>
-                                        <li><a href="room-details.html">ROOM DETAILS</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">ACTIVITIES</a>
-                                    <ul class="submenu megamenu">
-                                        <li>
-                                            <a href="#">Megamenu List</a>
-                                            <ul>
-                                                <li><a href="location.html">Location</a></li>
-                                                <li><a href="room-grid.html">Room Grid</a></li>
-                                                <li><a href="room-list.html">Room List</a></li>
-                                                <li><a href="room-details.html">Room Details</a></li>
-                                                <li><a href="#">Mega menu</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Megamenu List</a>
-                                            <ul>
-                                                <li><a href="event.html">Event</a></li>
-                                                <li><a href="#">Mega menu</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="team.html">Team</a></li>
-                                                <li><a href="#">Mega menu</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Megamenu List</a>
-                                            <ul>
-                                                <li><a href="room-list.html">Room List</a></li>
-                                                <li><a href="#">Mega menu</a></li>
-                                                <li><a href="room-grid.html">Room Grid</a></li>
-                                                <li><a href="room-details.html">Room Details</a></li>
-                                                <li><a href="#">Mega menu</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="location.html">LOCATION</a></li>
-                                <li><a href="event.html">EVENT</a></li>
-                                <li><a href="team.html">TEAM</a></li>
-                                <li><a href="contact.html">CONTACT</a></li>
-                            </ul>
+                            @{Html.RenderPartial("_Mainmenu"); }
                         </nav>
                     </div>
                     <!-- Mainmenu End -->
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu Area start -->
-        <div class="mobile-menu-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                        <div class="mobile-menu">
-                            <nav id="dropdown">
-                                <ul>
-                                    <li><a href="index.html">HOME</a></li>
-                                    <li>
-                                        <a href="room-grid.html">ROOMS</a>
-                                        <ul class="submenu">
-                                            <li><a href="room-list.html">ROOM LIST</a></li>
-                                            <li><a href="room-details.html">ROOM DETAILS</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="location.html">LOCATION</a></li>
-                                    <li><a href="event.html">EVENT</a></li>
-                                    <li><a href="team.html">TEAM</a></li>
-                                    <li><a href="contact.html">CONTACT</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu Area end -->
+        @Html.Partial("_MobileMenu")
     </header>
     <!-- Header Area End -->
-    <!-- Background Area Start -->
-    <section class="slider-area">
-        <div class="slider-wrapper">
-            <div class="single-slide" style="background-image: url('img/slider/1.jpg');">
-                <div class="banner-content overlay">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="text-content-wrapper">
-                                    <div class="text-content text-center">
-                                        <h1 class="pt-180">welcome to hotel atr</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        <div class="banner-btn">
-                                            <a class="default-btn" href="room-grid.html">explore</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-slide" style="background-image: url('img/slider/2.jpg');">
-                <div class="banner-content overlay">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="text-content-wrapper slide-two">
-                                    <div class="text-content text-center">
-                                        <h1 class="pt-180">welcome to hotel atr</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        <div class="banner-btn">
-                                            <a class="default-btn" href="room-grid.html">explore</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     @RenderBody()
      
@@ -186,7 +70,7 @@
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <div class="single-footer-widget">
                             <div class="footer-logo">
-                                <a href="index.html"><img src="img/logo/footer-logo.png" alt="HotelATR"></a>
+                                <a asp-controller="Home" asp-action="Index"><img src="~/img/logo/footer-logo.png" alt="HotelATR"></a>
                             </div>
                             <p>Lorem ipsum dolor sit amet, conse acteir our adipisicing elit, sed do eiusmod the a tempor the incididunt ut labore et dolore magnaa liqua. Ut enim minimn.</p>
                             <div class="social-icons">
@@ -219,12 +103,12 @@
                         <div class="single-footer-widget">
                             <h3>quick links</h3>
                             <ul class="footer-list">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="team.html">Stuffs</a></li>
-                                <li><a href="room-grid.html">Suits &amp; Rooms</a></li>
-                                <li><a href="event.html">Event</a></li>
-                                <li><a href="location.html">Location</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><a asp-controller="Team" asp-action="Team">Stuffs</a></li>
+                                <li><a asp-controller="Room" asp-action="Room">Suits &amp; Rooms</a></li>
+                                <li><a asp-controller="Event" asp-action="Event">Event</a></li>
+                                <li><a asp-controller="Location" asp-action="Location">Location</a></li>
+                                <li><a asp-controller="Home" asp-action="login">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -233,22 +117,22 @@
                             <h3>collections</h3>
                             <div class="instagram-image">
                                 <div class="footer-img">
-                                    <a href="room-grid.html"><img src="img/footer/1.jpg" alt=""></a>
+                                    <a href="room-grid.html"><img src="~/img/footer/1.jpg" alt=""></a>
                                 </div>
                                 <div class="footer-img">
-                                    <a href="room-grid.html"><img src="img/footer/2.jpg" alt=""></a>
+                                    <a href="room-grid.html"><img src="~/img/footer/2.jpg" alt=""></a>
                                 </div>
                                 <div class="footer-img">
-                                    <a href="room-grid.html"><img src="img/footer/3.jpg" alt=""></a>
+                                    <a href="room-grid.html"><img src="~/img/footer/3.jpg" alt=""></a>
                                 </div>
                                 <div class="footer-img">
-                                    <a href="room-grid.html"><img src="img/footer/4.jpg" alt=""></a>
+                                    <a href="room-grid.html"><img src="~/img/footer/4.jpg" alt=""></a>
                                 </div>
                                 <div class="footer-img">
-                                    <a href="room-grid.html"><img src="img/footer/5.jpg" alt=""></a>
+                                    <a href="room-grid.html"><img src="~/img/footer/5.jpg" alt=""></a>
                                 </div>
                                 <div class="footer-img">
-                                    <a href="room-grid.html"><img src="img/footer/6.jpg" alt=""></a>
+                                    <a href="room-grid.html"><img src="~/img/footer/6.jpg" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -287,5 +171,7 @@
     <script src="~/js/jquery.magnific-popup.js"></script>
     <script src="~/js/plugins.js"></script>
     <script src="~/js/main.js"></script>
+    
+    @RenderSection("scripts", false)
 </body>
 </html>
