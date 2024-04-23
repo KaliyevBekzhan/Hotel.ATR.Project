@@ -365,3 +365,4 @@ FodyWeavers.xsd
 /Hotel.Atr.WebApi/appsettings.json
 /Hotel.ATR.Portal/appsettings.json
 /Hotel.Atr.WebApi/appsettings.json
+/Hotel.ATR.Portal/Views/Contact/Contact.cshtml
